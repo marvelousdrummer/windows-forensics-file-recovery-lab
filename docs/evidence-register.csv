@@ -1,0 +1,27 @@
+Number,Original screenshot filename,Category,Included in this starter package,Review status
+1,01_ODT_Password_Protection.png.png,Password-protection setup,No,Pending privacy/copyright review
+2,02_PDF_Password_Protection.png.png,Password-protection setup,No,Pending privacy/copyright review
+3,03_JPEG_Before_Deletion.png.png,Recuva JPEG,No,Pending privacy/copyright review
+4,04_Recuva_Initial_Scan.png.png,Recuva JPEG,No,Pending privacy/copyright review
+5,05_Recuva_Recovery_Success.png,Recuva JPEG,No,Pending privacy/copyright review
+6,06_Recuva_SHA256_Verified.png.png,Recuva JPEG,No,Pending privacy/copyright review
+7,07_Cipher_Free_Space_Overwrite.png,Free-space overwrite,No,Pending privacy/copyright review
+8,08_Recuva_After_Cipher_Overwrite.png.png,Free-space overwrite,No,Pending privacy/copyright review
+9,09_Recuva_Deep_Scan_After_Cipher.png,Free-space overwrite,No,Pending privacy/copyright review
+10,10_PhotoRec_After_Cipher_Overwrite.png,Free-space overwrite,No,Pending privacy/copyright review
+11,11_SDelete_Backup_Hash_Verification.png.png,SDelete investigation,No,Pending privacy/copyright review
+12,12_SDelete_Three_Pass_Deletion.png.png,SDelete investigation,No,Pending privacy/copyright review
+13,13_SDelete_Recuva_Standard_Scan.png,SDelete investigation,No,Pending privacy/copyright review
+14,14_SDelete_Recuva_Deep_Scan.png,SDelete investigation,No,Pending privacy/copyright review
+15,15_SDelete_Recuva_Recovery.png,SDelete investigation,No,Pending privacy/copyright review
+16,16_SDelete_Recovered_ODT_Hash_Mismatch.png,SDelete investigation,No,Pending privacy/copyright review
+17,17_SDelete_Recovered_Readable_Document.png,SDelete investigation,No,Pending privacy/copyright review
+18,18_SDelete_Unencrypted_Original_Recovered.png,SDelete investigation,No,Pending privacy/copyright review
+19,19_SDelete_PhotoRec_Recovery.png,SDelete investigation,No,Pending privacy/copyright review
+20,20_PhotoRec_Original_ODT_Hash_Match.png,SDelete investigation,No,Pending privacy/copyright review
+21,21_PDF_Encrypted_Backup_Verified.png,Partition deletion and recovery,No,Pending privacy/copyright review
+22,22_Partition_Layout_Before_Deletion.png,Partition deletion and recovery,No,Pending privacy/copyright review
+23,23_Partition_Recovery_SHA256_Verified.png,Partition deletion and recovery,No,Pending privacy/copyright review
+24,24_ODT_Dictionary_Attack_Success.png.png,Password recovery,No,Pending privacy/copyright review
+25,25_PDF_Brute_Force_Success.png,Password recovery,No,Pending privacy/copyright review
+26,26_DMDE_Deleted_Partition_Recovery.png,Partition deletion and recovery,No,Pending privacy/copyright review
