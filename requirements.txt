@@ -1,0 +1,2 @@
+odfdecrypt==0.1.0
+pypdf==6.21.1
