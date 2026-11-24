@@ -50,6 +50,40 @@ The PDF recovered with DMDE and the preserved encrypted backup had the same SHA-
 
 Hash matching supports **byte-for-byte equality of these two files**. It is not by itself a substitute for a complete chain-of-custody record.
 
+## Visual evidence
+
+Eight screenshots selected from 26 original lab captures illustrate the observed results. Images are cropped for readability; a local host path in the DMDE screenshot was redacted. The images complement the [detailed findings](docs/findings.md) and [evidence register](docs/evidence-register.csv). Captions intentionally distinguish what a screenshot proves from conclusions supported by the wider experiment.
+
+### Deleted-file recovery and integrity
+
+| Recuva deleted-file recovery | SHA-256 verification of JPEG |
+|:--|:--|
+| [![Recuva operation completed dialog reporting one fully recovered file](screenshots/05_Recuva_One_File_Recovered.png)](screenshots/05_Recuva_One_File_Recovered.png) | [![PowerShell comparing matching SHA-256 hashes for the original and recovered JPEG](screenshots/06_Recuva_JPEG_SHA256_Match.png)](screenshots/06_Recuva_JPEG_SHA256_Match.png) |
+| Recuva reported one fully recovered file. Content identity is checked separately in the adjacent SHA-256 screenshot. | PowerShell shows identical SHA-256 digests for the original and Recuva-recovered JPEG. |
+
+### Anti-forensics and previous-file versions
+
+| SDelete three-pass deletion | Identifying an earlier ODT version |
+|:--|:--|
+| [![Sysinternals SDelete console output reporting three passes and a deleted encrypted ODT](screenshots/12_SDelete_Three_Pass_Execution.png)](screenshots/12_SDelete_Three_Pass_Execution.png) | [![PowerShell matching hashes for PhotoRec recovered ODT and earlier unencrypted original](screenshots/20_PhotoRec_Original_ODT_SHA256_Match.png)](screenshots/20_PhotoRec_Original_ODT_SHA256_Match.png) |
+| SDelete reports three passes and one deleted file. This alone is not proof that no historical copies remain. | The PhotoRec-recovered ODT matches an **earlier unencrypted original**, not the encrypted SDelete target. This is not proof of SDelete failure. |
+
+### Deleted-partition investigation
+
+| Deleted partition file discovery | Preserved PDF baseline hash |
+|:--|:--|
+| [![DMDE showing a deleted NTFS volume and the 63962-byte encrypted PDF in its root directory](screenshots/26_DMDE_Deleted_Partition_File_Discovered.png)](screenshots/26_DMDE_Deleted_Partition_File_Discovered.png) | [![PowerShell showing the SHA-256 hash of a preserved encrypted PDF backup](screenshots/23_Encrypted_PDF_Baseline_SHA256.png)](screenshots/23_Encrypted_PDF_Baseline_SHA256.png) |
+| DMDE displays the deleted NTFS volume and its **63,962-byte encrypted PDF**. The image shows discovery, not a completed extraction. | SHA-256 baseline for the preserved encrypted PDF. This image alone does **not** compare the recovered file against the backup. |
+
+### Offline password demonstrations
+
+| ODT dictionary demonstration | PDF numeric-password demonstration |
+|:--|:--|
+| [![Python terminal output reporting password123 found on the sixth of eight candidates](screenshots/24_ODT_Dictionary_Attack_Result.png)](screenshots/24_ODT_Dictionary_Attack_Result.png) | [![Python terminal output reporting PDF numeric password found after 1235 attempts in 4.29 seconds](screenshots/25_PDF_Four_Digit_Search_Result.png)](screenshots/25_PDF_Four_Digit_Search_Result.png) |
+| The offline Python dictionary test finds the lab ODT password on candidate **6 of 8**. | The four-digit numeric test finds the demo PDF password after **1,235 attempts in 4.29 seconds**. |
+
+*All files and passwords shown belong to this controlled, synthetic lab. No unrelated or third-party files were targeted.*
+
 ## What I learned
 
 1. A tool reporting a successful recovery is not the same as verifying **which version** was recovered.
@@ -72,7 +106,8 @@ Hash matching supports **byte-for-byte equality of these two files**. It is not 
 │   ├── findings.md
 │   └── evidence-register.csv
 └── screenshots/
-    └── README.md
+    ├── README.md
+    └── 8 reviewed PNG screenshots (see visual evidence above)
 ```
 
 The Python scripts are **cleaned-up, reusable versions** of the demonstrations performed during the lab. They were not independently re-tested after being refactored for this repository. They operate on local files supplied by the user and do not retrieve or target external data.
@@ -101,7 +136,9 @@ The code is included for educational, authorized offline testing, not for bypass
 
 ## Screenshots and publication precautions
 
-The experiment produced **26 screenshots**. They are deliberately excluded from this starter upload pending manual review. The `docs/evidence-register.csv` records their original filenames. Before publishing them, redact usernames, local paths, account information, licensed course pages, and unrelated personal content.
+The original lab produced **26 screenshots**. Eight reviewed and cropped PNGs are published in [`screenshots/`](screenshots/); the other 18 were not selected for publication. The [evidence register](docs/evidence-register.csv) maps original names to published filenames and review status.
+
+Before adding future images, check for Windows usernames, host paths, account details, unrelated desktop content, and copyrighted academic materials. The DMDE image in this gallery has a local host path redacted. For accurate interpretation, use the captions and [findings](docs/findings.md), rather than assuming a screenshot alone establishes the entire forensic result.
 
 **No virtual disks, raw evidence images, licensed EC-Council materials, or full university submissions are included.**
 
